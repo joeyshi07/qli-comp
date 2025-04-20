@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Article Page</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+  <body class="light">
+    <div class="container" id="article-container">
+      <h1 id="article-title"></h1>
+      <h2 id="article-author"></h2>
+      <img id="article-image" alt="Article image" />
+      <p id="article-content">Full article content will go here soon!</p>
+      <button
+        onclick="window.location.href='index.html'"
+        class="btn"
+        style="margin-top: 20px"
+      >
+        ← Back to Home
+      </button>
+    </div>
+
+    <script type="module">
+      import { articles } from "/JS/articles.js";
+
+      const params = new URLSearchParams(window.location.search);
+      const title = params.get("title");
+      const article = articles.find((a) => a.title === title);
+
+      if (article) {
+        document.getElementById("article-title").textContent = article.title;
+        document.getElementById(
+          "article-author"
+        ).textContent = `By: ${article.author}`;
+        document.getElementById("article-image").src = article.imageLink;
+      } else {
+        document.getElementById("article-container").innerHTML =
+          "<h2>Article not found</h2>";
+      }
+    </script>
+  </body>
+</html>
