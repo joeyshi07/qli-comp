@@ -111,16 +111,14 @@ body {
   color: var(--accent);
 }
 
-/* Link wrapper for cards */
 .card-link {
   text-decoration: none;
   color: inherit;
 }
 
-/* Back Button */
 .btn {
-  display: inline-block;
   background-color: var(--accent);
+  display: flex;
   color: white;
   font-weight: 600;
   padding: var(--space-sm) var(--space-md);
@@ -137,7 +135,6 @@ body {
   background-color: var(--accent-dark);
 }
 
-/* Article Page Layout */
 #article-container {
   max-width: 800px;
   margin: var(--space-lg) auto;
@@ -151,7 +148,6 @@ body {
 #article-title {
   font-size: 2.5rem;
   font-family: var(--font-header);
-  margin-bottom: var(--space-sm);
   color: var(--accent-dark);
 }
 
@@ -159,14 +155,12 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--accent);
-  margin-bottom: var(--space-md);
 }
 
 #article-image {
   width: 100%;
   height: auto;
   border-radius: var(--radius);
-  padding: var(--space-lg);
   margin: var(--space-md);
 }
 
